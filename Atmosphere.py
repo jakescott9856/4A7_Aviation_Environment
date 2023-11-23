@@ -1,6 +1,7 @@
 import numpy as np
 import math
 import matplotlib.pyplot as plt
+import Reference_Data as RD
 
 global T_sl, P_sl, Ro_sl, a_sl
 T_sl = 288.15 #K
@@ -17,15 +18,14 @@ def ISA(h):
         T = T_sl - (6.5*h)
         P = P_sl * (T/T_sl)**5.256
         Ro = Ro_sl * (T/T_sl)**4.256
-        a = a_sl * (T/T_sl)**0.5
 
     else:
         float(h)
         T = T_t
         P = P_t * math.exp(-0.1577*(h-11.0))
         Ro = Ro_t * math.exp(-0.1577*(h-11.0))
-        a = a_sl * (T/T_sl)**0.5 #copied from below tropopause
 
+    a = (math.sqrt(RD.gamma * RD.Rgas * T))
     return(h,T,P,Ro,a)
 
 
@@ -35,15 +35,16 @@ for i in range(len(ISA_hdata)):
     ISA_Tdata.append(ISA(ISA_hdata[i])[1]/T_sl)
     ISA_Pdata.append(ISA(ISA_hdata[i])[2]/P_sl)
     ISA_Rodata.append(ISA(ISA_hdata[i])[3]/Ro_sl)
-    ISA_adata.append(ISA(ISA_hdata[i])[4]/a_sl)
 
+"""
 plt.plot(ISA_hdata,ISA_Tdata, color = 'k', linestyle = 'solid', label = 'T/T_sl')
 plt.plot(ISA_hdata,ISA_Pdata, color = 'b', linestyle = 'dashed', label = 'P/P_sl')
 plt.plot(ISA_hdata,ISA_Rodata, color = 'r', linestyle = 'dashdot', label = 'Ro/Ro_sl')
-plt.plot(ISA_hdata,ISA_adata, color = 'g', linestyle = 'dotted', label = 'a/a_sl')
+
 
 plt.xlabel("h")
 plt.grid(color='k', linestyle='-', linewidth=0.1)
 plt.legend()
 plt.title("ISA")
 plt.show()
+"""
