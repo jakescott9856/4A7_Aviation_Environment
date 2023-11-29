@@ -11,17 +11,24 @@ def LD_ratio(nu):
     LD_ratio = 1/beta
     return(LD_ratio)
 
-def Vels(W,h,nu):
-    V_e_star = (W/(0.5*Atm.Ro_sl*RD.A_wing))**0.5 *(RD.K_2/RD.K_1)**0.25
+def Vels(W,h,nu): #gives nonsense
+    K_ratio = (RD.K_2/RD.K_1)**0.25
+    V_e_star = ((W/(0.5*Atm.Ro_sl*RD.A_wing))**0.5) * K_ratio
 
     V_e = nu * V_e_star
 
     sigma = Atm.ISA(h)[3]/Atm.Ro_sl
     V = V_e / (sigma**0.5)
-
-    M = V/Atm.ISA(h)[4]
-
+    a = Atm.ISA(h)[4]
+    M = V/a
+    print("vels",W, M,V_e_star,V_e,sigma,V,a)
     return(M,V,V_e_star,V_e)
 
-
-#print(Vels(RD.W_mto,RD.h_cruise,1))
+def nu(W,h,M):
+    a = Atm.ISA(h)[4]
+    V = M * a
+    sigma = Atm.ISA(h)[3]/Atm.Ro_sl
+    V_e = V * (sigma**0.5)
+    V_e_star = ((W/(0.5*Atm.Ro_sl*RD.A_wing))**0.5) *((RD.K_2/RD.K_1)**0.25)
+    nu = V_e / V_e_star
+    return(nu,sigma)

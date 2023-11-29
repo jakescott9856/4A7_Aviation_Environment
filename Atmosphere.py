@@ -5,7 +5,7 @@ import Reference_Data as RD
 
 global T_sl, P_sl, Ro_sl, a_sl
 T_sl = 288.15 #K
-P_sl = 101.325 #kPa
+P_sl = 101.325 *10**3#Pa
 Ro_sl = 1.225 #kg/m3
 a_sl = 340.3 #m/s
 
@@ -28,7 +28,7 @@ def ISA(h):
     a = (math.sqrt(RD.gamma * RD.Rgas * T))
     return(h,T,P,Ro,a)
 
-
+"""
 ISA_hdata = np.linspace(0,20,21)
 ISA_Tdata,ISA_Pdata,ISA_Rodata,ISA_adata = ([] for i in range(4))
 for i in range(len(ISA_hdata)):
@@ -36,7 +36,6 @@ for i in range(len(ISA_hdata)):
     ISA_Pdata.append(ISA(ISA_hdata[i])[2]/P_sl)
     ISA_Rodata.append(ISA(ISA_hdata[i])[3]/Ro_sl)
 
-"""
 plt.plot(ISA_hdata,ISA_Tdata, color = 'k', linestyle = 'solid', label = 'T/T_sl')
 plt.plot(ISA_hdata,ISA_Pdata, color = 'b', linestyle = 'dashed', label = 'P/P_sl')
 plt.plot(ISA_hdata,ISA_Rodata, color = 'r', linestyle = 'dashdot', label = 'Ro/Ro_sl')
