@@ -34,6 +34,12 @@ def Wingloading(W):
     WL_KG = WL_KN / RD.g
     return (WL_KN, WL_KG)
 
+def Heights(W,M,nu):
+    K_ratio = (RD.K_2/RD.K_1)**0.25
+    V_e_star = ((W/(0.5*Atm.Ro_sl*RD.A_wing))**0.5) * K_ratio
+    P = (Atm.Ro_sl * (nu**2) * (V_e_star**2)) / (RD.gamma * (M **2))
+    h = Atm.Altitude(P)
+    return (h)
 """
 def nu(W,h,M):
     a = Atm.ISA(h)[4]

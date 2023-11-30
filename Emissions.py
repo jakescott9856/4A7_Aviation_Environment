@@ -5,10 +5,13 @@ import matplotlib.pyplot as plt
 import Reference_Data as RD
 import Atmosphere as Atm
 
-def EI_nox(M,h,Ms_fb,r,n_c):
+def EI_nox(M,h,Ms_fb):
+    r = RD.r
+    n_c = RD.n_c
     g = RD.gamma
     g_1 = g -1
     r1 = r**((g-1)/g)
+
     T_a = Atm.ISA(h)[1]
     T_02 = T_a * (1 + ((g_1/2)*M**2))
     T_03 = T_02 * (1 + ((r1-1)/n_c))
@@ -20,7 +23,7 @@ def EI_nox(M,h,Ms_fb,r,n_c):
 def EI_co2(Ms_fb):
     EI_co2 = 3088 #gCO2/kg fuel
     Ms_co2 = EI_co2 * Ms_fb
-    return(EI_co2, Ms_co2)
+    return( Ms_co2,EI_co2)
 
 def FBPR(s,H,W_e,W_p): #Wf/sWp
     k =RD.k

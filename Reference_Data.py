@@ -1,5 +1,9 @@
+"""Reference Data"""
+
 """Modern Efficient Airplane"""
 PAX_max = 240 #Max number of passengers
+Ms_PAX = 100 #kg, Mass of each passenger
+
 S_Pmax = 12000 #km, Range at max payload
 Ms_mp = 40 #tonne, Maximum payload
 Ms_e = 106 #tonne, Empty weight

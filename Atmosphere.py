@@ -28,8 +28,16 @@ def ISA(h):
     a = (math.sqrt(RD.gamma * RD.Rgas * T))
     return(h,T,P,Ro,a)
 
+def Altitude(P):
+    if P>=P_t:
+        T = T_sl * (P/P_sl)**(1/5.256)
+        h = (T - T_sl)/-6.5
+    if P<P_t:
+        h = (math.log(P/P_t)/-0.1577) + 11
+    return(h)
+
 """
-ISA_hdata = np.linspace(0,20,21)
+SA_hdata = np.linspace(0,20,21)
 ISA_Tdata,ISA_Pdata,ISA_Rodata,ISA_adata = ([] for i in range(4))
 for i in range(len(ISA_hdata)):
     ISA_Tdata.append(ISA(ISA_hdata[i])[1]/T_sl)
@@ -45,5 +53,5 @@ plt.xlabel("h")
 plt.grid(color='k', linestyle='-', linewidth=0.1)
 plt.legend()
 plt.title("ISA")
-plt.show()
-"""
+plt.show()"""
+
