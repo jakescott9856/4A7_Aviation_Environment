@@ -5,8 +5,9 @@ import matplotlib.pyplot as plt
 import Reference_Data as RD
 
 
-def Breguet(n_0,LD_ratio,W_start,s_stage):
+def Breguet(n_0,LD_ratio,Ms_start,s_stage):
     H = RD.LCV * n_0 * LD_ratio /RD.g 
-    W_end = W_start/math.exp(s_stage/H)
-    W_fb = W_start - W_end
-    return(W_fb,W_end,H)
+    Ms_fb = Ms_start*(1-math.exp(-s_stage/H))
+    Ms_end = Ms_start - Ms_fb
+    #print(H,RD.LCV, n_0, LD_ratio, RD.g)
+    return(Ms_fb,Ms_end,H)
