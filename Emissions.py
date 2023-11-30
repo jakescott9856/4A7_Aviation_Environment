@@ -25,7 +25,8 @@ def EI_co2(Ms_fb):
     Ms_co2 = EI_co2 * Ms_fb
     return( Ms_co2,EI_co2)
 
-def FBPR(s,H,W_e,W_p): #Wf/sWp
+def FBPR(s,H,M_e,M_p): #Wf/sWp
     k =RD.k
-    FBPR = (1/s) * (1 + (W_e/W_p)) * ((1-math.exp(-s/H) +k)/(math.exp(-s/H) -k))
+    FBPR = (1/s) * (1 + (M_e/M_p)) * ((1-math.exp(-s/H) +k)/(math.exp(-s/H) -k)) *1000
     return FBPR
+
