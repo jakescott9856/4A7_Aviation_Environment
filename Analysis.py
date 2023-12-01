@@ -46,7 +46,7 @@ for i in range(len(h_array)):
     print(NOx_passkm, CO2_passkm, FBPR, ND_FBPR, ND_Dist)
 
     #plt.plot(S,Alt,color = tableau_colors[i], label = h_start_str +"km")
-    #plt.scatter(h_start_str,NOx_passkm,color = "b")
+    #plt.scatter(h_start_str,FBPR,color = "b")
 plt.ylabel('nox')
 plt.xlabel(h_start_str)
 plt.title(flight_traj)
