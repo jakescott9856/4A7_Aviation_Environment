@@ -37,21 +37,22 @@ def Altitude(P):
     return(h)
 
 """
-SA_hdata = np.linspace(0,20,21)
+ISA_hdata = np.linspace(0,20,21)
 ISA_Tdata,ISA_Pdata,ISA_Rodata,ISA_adata = ([] for i in range(4))
 for i in range(len(ISA_hdata)):
     ISA_Tdata.append(ISA(ISA_hdata[i])[1]/T_sl)
     ISA_Pdata.append(ISA(ISA_hdata[i])[2]/P_sl)
     ISA_Rodata.append(ISA(ISA_hdata[i])[3]/Ro_sl)
+    ISA_adata.append(ISA(ISA_hdata[i])[4]/a_sl)
 
 plt.plot(ISA_hdata,ISA_Tdata, color = 'k', linestyle = 'solid', label = 'T/T_sl')
 plt.plot(ISA_hdata,ISA_Pdata, color = 'b', linestyle = 'dashed', label = 'P/P_sl')
 plt.plot(ISA_hdata,ISA_Rodata, color = 'r', linestyle = 'dashdot', label = 'Ro/Ro_sl')
+plt.plot(ISA_hdata,ISA_adata, color = 'g', linestyle = 'dotted', label = 'A/A_sl')
 
-
-plt.xlabel("h")
+plt.xlabel("Altitude (km)")
 plt.grid(color='k', linestyle='-', linewidth=0.1)
 plt.legend()
-plt.title("ISA")
-plt.show()"""
-
+plt.title("International Standard Atmosphere")
+plt.show()
+"""

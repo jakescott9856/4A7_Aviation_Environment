@@ -76,10 +76,10 @@ for i in range(len(h_array)):
       E_nox = Em.EI_nox(M,h,Ms_fb)[0]
       E_co2 = Em.EI_co2(Ms_fb)[0]
 
-      data2 = {"Dist":[round(s_cumulative,2)],"Alt":[round(h,2)],"Mach":[round(M,2)], "TAS":[round(V,2)], \
-                "Fuel": [round(Ms_f,2)], "Fuel Burn":[round(Ms_fb,2)], "gNOx":[round(E_nox,2)],\
-                  "gCO2": [round(E_co2,2)], "n_prop":[round(n_prop,2)], "n_cycle":[round(n_cycle,2)],\
-                      "n_0":[round(n_0,2)], "H":[round(H,2)]}
+      data2 = {"Dist":[s_cumulative],"Alt":[h],"Mach":[M], "TAS":[V], \
+                "Fuel": [Ms_f], "Fuel Burn":[Ms_fb], "gNOx":[E_nox],\
+                  "gCO2": [E_co2], "n_prop":[n_prop], "n_cycle":[n_cycle],\
+                      "n_0":[n_0], "H":[H]}
       df2 = pd.DataFrame(data2)
       df = pd.concat([df, df2],ignore_index = True)
   print("consth"+h_start_str)
