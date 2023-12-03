@@ -5,8 +5,7 @@ import matplotlib.pyplot as plt
 import Reference_Data as RD
 import Atmosphere as Atm
 
-def EI_nox(M,h,Ms_fb):
-    r = RD.r
+def EI_nox(M,h,Ms_fb,r):
     n_c = RD.n_c
     g = RD.gamma
     g_1 = g -1

@@ -17,8 +17,7 @@ def n_0(n_prop,n_cycle):
     n_0 = n_prop * n_cycle * n_tr
     return(n_0)
 
-def n_prop(h,M):
-    FPR = RD.FPR
+def n_prop(h,M,FPR):
     g = RD.gamma
     g_1 = RD.gamma-1
     V = M*Atm.ISA(h)[4]
