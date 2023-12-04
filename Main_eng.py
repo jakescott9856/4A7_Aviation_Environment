@@ -85,6 +85,6 @@ for i in range(1):
       df = pd.concat([df, df2],ignore_index = True)
   print(filename+data_val)
   #print(df)
-  df.to_csv("C:\\Users\\jaket\\Python Projects\\4A7_Aviation_Environment\\Data_Files\\"+filename+data_val+".csv",\
+  df.to_csv("C:\\Users\\*removed for blind marking*\\Python Projects\\4A7_Aviation_Environment\\Data_Files\\"+filename+data_val+".csv",\
             sep=',', index=False, encoding='utf-8')
 

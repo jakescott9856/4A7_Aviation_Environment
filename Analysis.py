@@ -24,7 +24,7 @@ for h_const in boolean_values:
 
     for i in range(len(h_array)):
         h_start_str = str(h_array[i])
-        data = pd.read_csv("C:\\Users\\jaket\\Python Projects\\4A7_Aviation_Environment\\Data_Files\\"+flight_traj+h_start_str+".csv")
+        data = pd.read_csv("C:\\Users\\*removed for blind marking*\\Python Projects\\4A7_Aviation_Environment\\Data_Files\\"+flight_traj+h_start_str+".csv")
         #print(data)
         S = data.iloc[1:,0].to_numpy()
         Alt = data.iloc[1:,1].to_numpy()

@@ -91,6 +91,6 @@ for i in range(len(h_array)):
       df = pd.concat([df, df2],ignore_index = True)
   print(filename+h_start_str)
   #print(df)
-  df.to_csv("C:\\Users\\jaket\\Python Projects\\4A7_Aviation_Environment\\Data_Files\\"+filename+h_start_str+".csv",\
+  df.to_csv("C:\\Users\\*removed for blind marking*\\Python Projects\\4A7_Aviation_Environment\\Data_Files\\"+filename+h_start_str+".csv",\
             sep=',', index=False, encoding='utf-8')
 

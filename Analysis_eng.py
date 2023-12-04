@@ -17,7 +17,7 @@ t_data = []
 for i in range(len(t_array)):
     t = t_array[i]
     t_str = str(t_array[i])
-    data = pd.read_csv("C:\\Users\\jaket\\Python Projects\\4A7_Aviation_Environment\\Data_Files\\"+filename+t_str+".csv")
+    data = pd.read_csv("C:\\Users\\*removed for blind marking*\\Python Projects\\4A7_Aviation_Environment\\Data_Files\\"+filename+t_str+".csv")
     #print(data)
     S = data.iloc[1:,0].to_numpy()
     Alt = data.iloc[1:,1].to_numpy()
