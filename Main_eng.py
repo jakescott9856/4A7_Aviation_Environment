@@ -22,14 +22,13 @@ s_section = 10 #km
 
 
 
-t_array = np.linspace(4,8,9)
-print(t_array)
-FPR = RD.FPR
-r = RD.r
+theta = 4
+FPR = 1.95
+r = 20
 #theta = RD.theta
-filename = "t"
-for theta in t_array:
-  data_val = str(theta)
+filename = "ENG"
+for i in range(1):
+  data_val = str(FPR) + "_" + str(r) + "_" + str(theta)
   h_start= 10
   W = W_start
   Ms = Ms_start

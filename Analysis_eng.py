@@ -11,8 +11,8 @@ tableau_colors = list(mcolors.TABLEAU_COLORS.values())
 
 
 
-t_array = np.linspace(4,8,9)
-filename = "t"
+t_array = ["1.05_50_6" , "1.45_45_6" , "1.95_20_4"]
+filename = "ENG"
 t_data = []
 for i in range(len(t_array)):
     t = t_array[i]
@@ -46,7 +46,28 @@ for i in range(len(t_array)):
     
     #plt.plot(FPR,n_prop,color = tableau_colors[i], label = FPR_str )
 
+values1 = [sublist[3] for sublist in t_data]/t_data[1][3] #non dim
+values2 = [sublist[2] for sublist in t_data]/t_data[1][2]
+values3 = [sublist[1] for sublist in t_data]/t_data[1][1]
 
+
+indices = np.arange(len(values1))
+bar_width = 0.20
+
+plt.bar(indices - bar_width, values1, width=bar_width, label='Nondim FBPR', color = tableau_colors[1] )
+plt.bar(indices, values2, width=bar_width, label='Nondim CO2 Em',color = tableau_colors[2])
+plt.bar(indices + bar_width, values3, width=bar_width, label='Nondim NOx Em',color = tableau_colors[3])
+
+group_labels = ["1.05,50,6", "1.45,45,6", "1.95,20,4"]  # Add your group labels here
+plt.xticks(indices, group_labels)
+plt.xlabel('FPR,r,theta ')
+plt.ylabel('')
+plt.title('Combined Effect of Engine Parameters')
+plt.legend()
+
+# Show the plot
+plt.show()
+"""
 values1 = [sublist[2] for sublist in t_data]/t_data[5][2] #non dim
 values2 = [sublist[1] for sublist in t_data]/t_data[5][1]
 print(values2)
@@ -63,3 +84,4 @@ plt.legend(loc="upper left", bbox_to_anchor=(1, 1))
 plt.tight_layout()
 plt.show()
 
+"""
